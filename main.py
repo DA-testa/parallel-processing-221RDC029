@@ -11,9 +11,8 @@ def parallel_processing(n, m, data):
         mazākais_thread = threads[0]
         # Ja ir pieejams īsāks laiks, tad to pievieno thread
         for thread in threads:
-            if thread[0] > mazākais_thread[0]:
+            if thread[0] < mazākais_thread[0]:
                 mazākais_thread = thread
-
         output.append((mazākais_thread[0], mazākais_thread[1]))
         threads.remove(mazākais_thread)
         laiks = mazākais_thread[0] + data[i]
@@ -24,7 +23,7 @@ def main():
     # TODO: create input from keyboard
     # input consists of two lines
     # first line - n and m
-    # n - thread count 
+    # n - thread count
     # m - job count
     n, m = map(int, input().split())
     # second line - data
