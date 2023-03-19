@@ -13,7 +13,7 @@ def parallel_processing(n, m, data):
         for thread in threads:
             if thread[0] < mazākais_thread[0]:
                 mazākais_thread = thread
-        output.append((mazākais_thread[0], mazākais_thread[1]))
+        output.append((mazākais_thread[1], mazākais_thread[0]))
         threads.remove(mazākais_thread)
         laiks = mazākais_thread[0] + data[i]
         threads.append((laiks, mazākais_thread[1]))
